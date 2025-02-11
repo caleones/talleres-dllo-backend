@@ -47,8 +47,6 @@ function peorParidad (numero) {
     for (let i = 0; i < jurados; i++) {
         if (numero % 2 == 0) {
             votos++;
-        } else {
-            votosContra++;
         }
     }
 
