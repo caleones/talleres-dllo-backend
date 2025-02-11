@@ -1,6 +1,6 @@
 # Taller 1 - 14 de Febrero de 2025
 
-## Pasos para ejecutar el taller desde Visual Studio Code o desde un GitHub Codespaces sin descargar nada
+## Pasos para ejecutar el taller desde un GitHub Codespaces sin descargar nada
 
 1. **Instala http-server globalmente** usando npm:
    ```bash
@@ -30,7 +30,7 @@
 
 ## Pasos para ejecutar el taller con los archivos descargados
 
-1. Nada, si ya descargaste la carpeta, sólo abre index.html ubicado en la carpeta Taller 1.
+1. Nada, si ya descargaste los archivos, sólo abre index.html ubicado en la carpeta Taller 1.
 
 
 
