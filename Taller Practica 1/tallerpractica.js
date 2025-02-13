@@ -62,11 +62,23 @@ function getRandomElement (length) {
     return parseFloat(result);
 }
 
-function punto4 () {
+function punto4 (nesimoElemento) {
     /*
     Desarrolle una función que retorne el elemento n de la serie Fibonacci.
     */
+    return fibonacci(nesimoElemento)
+}
 
+function fibonacci(n) {
+    if (n == 0) {
+        return 0;
+    } else {
+        if (n == 1) {
+            return 1
+        } else {
+            return fibonacci(n-1) + fibonacci(n-2)
+        }
+    }
 }
 
 function punto5 () {
@@ -148,3 +160,7 @@ for (let i = 0; i < cantidadElementos; i++) {
 let elemento = parseFloat(prompt("Escriba el elemento al que le desea evaluar la ocurrencia: "))
 
 console.log(`De la cantidad de ${cantidadElementos} elementos aleatorios hasta longitud de ${longitudElemento} el total de ocurrencias del elemento ${elemento} es:`, punto3(elementosList, elemento));
+
+console.log("Estás visualizando el cuarto punto");
+let nesimoElemento = parseFloat(prompt("Escriba qué elemento de la serie de Fibonacci que quiere conocer"))
+console.log(`El valor de la serie de Fibonacci para el elemento número ${nesimoElemento} es:`, punto4(nesimoElemento));
