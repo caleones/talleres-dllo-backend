@@ -97,12 +97,28 @@ function punto5 (lista) {
     return false;
 }
 
-function punto6 () {
+function punto6 (lista) {
     /*
     Desarrolle una función que retorne el elemento mas repetido de una lista.
     */
 
+    let masRepetido = '';
+    let ocurrencias = 0
 
+    for (let i = 0; i < lista.length; i++) {
+        let contador = 0;
+        for (let j = i+1; j < lista.length; j++) {
+            if (lista[i] == lista[j]) {
+                contador++;
+            }            
+        }
+        if (contador > ocurrencias) {
+            ocurrencias = contador;
+            masRepetido = lista[i];
+        }
+    }
+
+    return masRepetido;
 }
 
 function punto7 () {
@@ -187,4 +203,22 @@ if (punto5(exampleList5)) {
     console.log("Hay repetidos");
 } else {
     console.log("No hay repetidos")
+}
+
+console.log("Estás visualizando el sexto punto");
+let exampleList6 = ['si', 'si', 'si', 'no', 'no', 'no', 'no'];
+let cantidadElementos6 = parseFloat(prompt("Escriba la cantidad de elementos aleatorios que desea generar: "));
+let longitudElemento6 = parseFloat(prompt("Escriba el máximo tamaño de los elementos: "));
+
+for (let i = 0; i < cantidadElementos6; i++) {
+    let randomLength = Math.floor(Math.random() * longitudElemento6) + 1;
+    exampleList6.push(getRandomString(randomLength));
+}
+
+elementoMasRepetido = punto6(exampleList6)
+
+if (elementoMasRepetido !== '') {
+    console.log(`El elemento más repetido es:`, elementoMasRepetido);    
+} else {
+    console.log("No hay un elemento que se repita");
 }
