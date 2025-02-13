@@ -30,7 +30,7 @@ function punto2 (base, exponente) {
 
     resultado = 1;
 
-    for (i=0; i<exponente; i++) {
+    for (let i = 0; i < exponente; i++) {
         resultado = resultado * base;
     }
 
@@ -43,7 +43,7 @@ function punto3 (lista, elemento) {
     */
 
     let ocurrencias = 0;
-    for (i=0; i<lista.length; i++) {
+    for (let i = 0; i < lista.length; i++) {
         if (lista[i] == elemento) {
             ocurrencias++;
         }
@@ -66,7 +66,7 @@ function punto4 (nesimoElemento) {
     /*
     Desarrolle una función que retorne el elemento n de la serie Fibonacci.
     */
-    return fibonacci(nesimoElemento)
+    return fibonacci(nesimoElemento);
 }
 
 function fibonacci(n) {
@@ -74,19 +74,27 @@ function fibonacci(n) {
         return 0;
     } else {
         if (n == 1) {
-            return 1
+            return 1;
         } else {
-            return fibonacci(n-1) + fibonacci(n-2)
+            return fibonacci(n-1) + fibonacci(n-2);
         }
     }
 }
 
-function punto5 () {
+function punto5 (lista) {
     /*
     Desarrolle una función que retorne si una lista tiene duplicados o no.
     */
 
+    for (let i = 0; i < lista.length; i++) {
+        for (let j = i+1; j < lista.length; j++) {
+            if (lista[i] == lista[j]) {
+                return true;
+            }
+        }
+    }
 
+    return false;
 }
 
 function punto6 () {
@@ -164,3 +172,19 @@ console.log(`De la cantidad de ${cantidadElementos} elementos aleatorios hasta l
 console.log("Estás visualizando el cuarto punto");
 let nesimoElemento = parseFloat(prompt("Escriba qué elemento de la serie de Fibonacci que quiere conocer"))
 console.log(`El valor de la serie de Fibonacci para el elemento número ${nesimoElemento} es:`, punto4(nesimoElemento));
+
+console.log("Estás visualizando el quinto punto");
+let exampleList5 = ['si', 'si', 'si'];
+let cantidadElementos5 = parseFloat(prompt("Escriba la cantidad de elementos aleatorios que desea generar: "));
+let longitudElemento5 = parseFloat(prompt("Escriba el máximo tamaño de los elementos: "));
+
+for (let i = 0; i < cantidadElementos5; i++) {
+    let randomLength = Math.floor(Math.random() * longitudElemento5) + 1;
+    exampleList5.push(getRandomString(randomLength));
+}
+
+if (punto5(exampleList5)) {
+    console.log("Hay repetidos");
+} else {
+    console.log("No hay repetidos")
+}
