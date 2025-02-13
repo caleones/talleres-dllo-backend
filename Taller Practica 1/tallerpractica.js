@@ -121,20 +121,30 @@ function punto6 (lista) {
     return masRepetido;
 }
 
-function punto7 () {
+function punto7 (lista) {
     /*
     Desarrolle una función que ordene una lista desordenada.
     */
 
+    let temp
 
+    for (let i = 0; i < lista.length; i++) {
+        for (let j = i+1; j < lista.length; j++) {
+            if (lista[i] > lista[lista[j]]) {
+                temp = lista[i];
+                lista[i] = lista[j];
+                lista[j] = temp;
+            }
+        }
+    }
 }
 
-function punto8 () {
+function punto8 (lista, nesimo) {
     /*
     Desarrolle una función que retorne el n-esimo elemento mas grande de una lista.
     */
 
-
+    
 }
 
 function punto9 () {
