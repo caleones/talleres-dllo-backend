@@ -23,12 +23,18 @@ function getRandomString (length) {
     return result;
 }
 
-function punto2 () {
+function punto2 (base, exponente) {
     /*
     Desarrolle una función que retorne el resultado de una exponenciación dada la base y el exponente sin utilizar el operador respectivo.
     */
 
+    resultado = 1
 
+    for (i=0; i<exponente; i++) {
+        resultado = resultado * base
+    }
+
+    return resultado
 }
 
 function punto3 () {
@@ -95,9 +101,12 @@ function punto10 () {
 }
 
 let exampleList = []
-for (let i = 0; i < 100; i++) {
-    let randomLength = Math.floor(Math.random() * 100) + 1;
+let cantidadCadenas = parseFloat(prompt("Escriba la cantidad de cadenas aleatorias que desea generar: "))
+let longitudCadena = parseFloat(prompt("Escriba el máximo tamaño de las cadenas: "))
+
+for (let i = 0; i < cantidadCadenas; i++) {
+    let randomLength = Math.floor(Math.random() * longitudCadena) + 1;
     exampleList.push(getRandomString(randomLength));
 }
 
-console.log("La cantidad de cadenas aleatorias hasta longitud de 100 que tienen una longitud mayor a 25 caracteres es:", punto1(exampleList));
+console.log(`De la cantidad de ${cantidadCadenas} cadenas aleatorias hasta longitud de ${longitudCadena} el total de cadenas que tienen una longitud mayor a 25 caracteres es:`, punto1(exampleList));
