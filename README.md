@@ -32,5 +32,10 @@
 
 1. Nada, si ya descargaste los archivos, sólo abre index.html ubicado en la carpeta Taller 1.
 
+# Taller 2 - 27 de Febrero de 2025
+
+Mismas instrucciones que el Taller 1. Adjunto imágenes de los resultados.
+
+![image](https://github.com/user-attachments/assets/84e7a3f3-a9bf-440a-8597-c912af95c532)
 
 
