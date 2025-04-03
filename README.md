@@ -1,41 +1,34 @@
-# Taller 1 - 14 de Febrero de 2025
+# Taller 4 - 3 de abril de 2025
 
-## Pasos para ejecutar el taller desde un GitHub Codespaces sin descargar nada
+# GET /users/hobby
+curl "http://localhost:3000/users/hobby?hobby=lectura"
 
-1. **Instala http-server globalmente** usando npm:
-   ```bash
-   npm install -g http-server
-   ```
-2. Navega al directorio donde se encuentran los archivos index.html y taller1.js, y ejecuta el siguiente comando:
-   ```bash
-   http-server
-   ```
-3. Accede a la aplicación abriendo tu navegador y dirigiéndote a: http://localhost:8080
+# GET /users/exists
+curl "http://localhost:3000/users/exists?codigo=200096042"
 
-4. Ingresar al Taller 1 eligiendo Taller 1 en la lista, de la forma:
+# GET /users/hobby/count
+curl "http://localhost:3000/users/hobby/count?hobby=programar"
 
-![{D033203B-FAE9-4837-B328-FBD9E8B759E8}](https://github.com/user-attachments/assets/f7c4f4bd-74a0-4e9d-ae65-1a14c8c659ae)
+# GET /users/is-free
+curl "http://localhost:3000/users/is-free"
 
-5. Digitar los valores solicitados, de la forma:
+# POST /users/suggest
+curl -X POST "http://localhost:3000/users/suggest" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "codigo": "200096042",
+           "hobby": "cocinar"
+         }'
 
-![{E7CD6BAD-D70D-4194-9077-E5DFAD417751}](https://github.com/user-attachments/assets/b17fc23e-4b2a-4680-97bb-7551fb795255)
+# POST /users
+curl -X POST "http://localhost:3000/users" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "codigo": "200171902",
+           "nombre": "Edison",
+           "apellido": "Pacheco",
+           "hobbies": ["estudiar", "carnavalear", "ir a cine"]
+         }'
 
-6. Acceder a la consola del navegador, de la forma:
-
-![{A9E55908-A3E6-4B1E-B05C-9EC48DDBCDC0}](https://github.com/user-attachments/assets/7aac5dab-7e7d-49f2-ba1e-5af103650cd6)
-
-7. Finalmente contempla los resultados :)
-
-![{141C1FA5-C126-457E-B658-E454924E5361}](https://github.com/user-attachments/assets/a5636d88-a68e-4f5a-b13a-133e9e232f68)
-
-## Pasos para ejecutar el taller con los archivos descargados
-
-1. Nada, si ya descargaste los archivos, sólo abre index.html ubicado en la carpeta Taller 1.
-
-# Taller 2 - 27 de Febrero de 2025
-
-Mismas instrucciones que el Taller 1. Adjunto imágenes de los resultados.
-
-![image](https://github.com/user-attachments/assets/84e7a3f3-a9bf-440a-8597-c912af95c532)
-
-
+# POST /users/random
+curl -X POST "http://localhost:3000/users/random"
